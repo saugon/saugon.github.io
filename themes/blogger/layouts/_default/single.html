@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode}}{{ .}}{{ else }}en-US{{end}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>{{ .Title }} - {{ .Site.Title}}</title>
+    {{ .Hugo.Generator }}
+</head>
+<main>
+  {{ partial "header.html" .}}
+  <h1>{{.Title}}</h1>
+  <div class="details">
+    <div class="posted">
+      <span>Posted on:</span>
+      {{ dateFormat "January 2, 2006" .Date }}
+    </div>
+    <div class="tags">
+      {{ partial "tags.html" .}}
+    </div>
+  </div>
+  <div class="content">{{.Content}}</div>
+</main>
+
+{{ partial "footer.html"}}
